@@ -1,4 +1,4 @@
-package bitmath
+package bitmath4go
 
 import (
 	"testing"

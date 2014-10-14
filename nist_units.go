@@ -1,4 +1,4 @@
-package bitmath
+package bitmath4go
 
 var byteValues = map[string]float64{
 	"MiB": 1048576,

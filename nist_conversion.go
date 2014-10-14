@@ -1,4 +1,4 @@
-package bitmath
+package bitmath4go
 
 func (b Byte) AsMebibytes() Byte {
 	return Byte{
