@@ -1,5 +1,16 @@
 package bitmath4go
 
+func (b Byte) AsKilibytes() Byte {
+	return Byte{
+		ByteValue: b.ByteValue,
+		StatedValue: StatedValue{
+			Prefix:    "KiB",
+			BaseValue: byteValues["KiB"],
+			Value:     b.ByteValue / byteValues["KiB"],
+		},
+	}
+}
+
 func (b Byte) AsMebibytes() Byte {
 	return Byte{
 		ByteValue: b.ByteValue,
@@ -40,6 +51,17 @@ func (b Byte) AsPebibytes() Byte {
 			Prefix:    "PiB",
 			BaseValue: byteValues["PiB"],
 			Value:     b.ByteValue / byteValues["PiB"],
+		},
+	}
+}
+
+func (b Byte) AsExbibytes() Byte {
+	return Byte{
+		ByteValue: b.ByteValue,
+		StatedValue: StatedValue{
+			Prefix:    "EiB",
+			BaseValue: byteValues["EiB"],
+			Value:     b.ByteValue / byteValues["EiB"],
 		},
 	}
 }

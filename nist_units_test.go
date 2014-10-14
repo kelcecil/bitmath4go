@@ -1,8 +1,32 @@
 package bitmath4go
 
 import (
+	"math"
 	"testing"
 )
+
+func TestKilibyte(t *testing.T) {
+	test := Kilibyte(1)
+	if test.Prefix != "KiB" {
+		t.Errorf("Prefix is %s. Should be KiB", test.Prefix)
+	}
+}
+
+func TestKiB(t *testing.T) {
+	shortName := KiB(1)
+	longName := Kilibyte(1)
+	testShortAndLongFuncNamesShouldBeSame(t, shortName, longName)
+}
+
+func TestKilibyteValuesShouldBeRight(t *testing.T) {
+	testObject := Kilibyte(1)
+	expectedValue := math.Pow(2, 10)
+	testInitializationValues(t, testObject, expectedValue)
+
+	testObject = Kilibyte(5)
+	expectedValue = math.Pow(2, 10) * 5
+	testInitializationValues(t, testObject, expectedValue)
+}
 
 func TestMebibyte(t *testing.T) {
 	test := Mebibyte(1)
@@ -93,5 +117,28 @@ func TestPebibyteValuesShouldBeRight(t *testing.T) {
 
 	testObject = Pebibyte(5)
 	expectedValue = float64(1125899906842624) * 5
+	testInitializationValues(t, testObject, expectedValue)
+}
+
+func TestExbibyte(t *testing.T) {
+	test := Kilibyte(1)
+	if test.Prefix != "KiB" {
+		t.Errorf("Prefix is %s. Should be KiB", test.Prefix)
+	}
+}
+
+func TestEiB(t *testing.T) {
+	shortName := EiB(1)
+	longName := Exbibyte(1)
+	testShortAndLongFuncNamesShouldBeSame(t, shortName, longName)
+}
+
+func TestExbibyteValuesShouldBeRight(t *testing.T) {
+	testObject := Exbibyte(1)
+	expectedValue := math.Pow(2, 60)
+	testInitializationValues(t, testObject, expectedValue)
+
+	testObject = Exbibyte(5)
+	expectedValue = math.Pow(2, 60) * 5
 	testInitializationValues(t, testObject, expectedValue)
 }

@@ -1,10 +1,14 @@
 package bitmath4go
 
+import "math"
+
 var byteValues = map[string]float64{
-	"MiB": 1048576,
-	"GiB": 1073741824,
-	"TiB": 1099511627776,
-	"PiB": 1125899906842624,
+	"KiB": math.Pow(2, 10),
+	"MiB": math.Pow(2, 20),
+	"GiB": math.Pow(2, 30),
+	"TiB": math.Pow(2, 40),
+	"PiB": math.Pow(2, 50),
+	"EiB": math.Pow(2, 60),
 }
 
 type Byte struct {
@@ -31,11 +35,17 @@ func generateSizeFunction(prefix string, baseValue float64) func(float64) Byte {
 	}
 }
 
-var Mebibyte = generateSizeFunction("MiB", byteValues["MiB"])
-var MiB = Mebibyte
-var Gibibyte = generateSizeFunction("GiB", byteValues["GiB"])
-var GiB = Gibibyte
-var Tebibyte = generateSizeFunction("TiB", byteValues["TiB"])
-var TiB = Tebibyte
-var Pebibyte = generateSizeFunction("PiB", byteValues["PiB"])
-var PiB = Pebibyte
+var (
+	Kilibyte = generateSizeFunction("KiB", byteValues["KiB"])
+	KiB      = Kilibyte
+	Mebibyte = generateSizeFunction("MiB", byteValues["MiB"])
+	MiB      = Mebibyte
+	Gibibyte = generateSizeFunction("GiB", byteValues["GiB"])
+	GiB      = Gibibyte
+	Tebibyte = generateSizeFunction("TiB", byteValues["TiB"])
+	TiB      = Tebibyte
+	Pebibyte = generateSizeFunction("PiB", byteValues["PiB"])
+	PiB      = Pebibyte
+	Exbibyte = generateSizeFunction("EiB", byteValues["EiB"])
+	EiB      = Exbibyte
+)
