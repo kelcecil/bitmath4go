@@ -5,6 +5,19 @@ import (
 	"testing"
 )
 
+func TestByte(t *testing.T) {
+	test := Byte(1)
+	if test.Prefix != "Byte" {
+		t.Errorf("Prefix is %s. Should be Byte", test.Prefix)
+	}
+}
+
+func TestByteValuesShouldBeRight(t *testing.T) {
+	testObject := Byte(1)
+	expectedValue := float64(1)
+	testInitializationValues(t, testObject, expectedValue)
+}
+
 func TestKilibyte(t *testing.T) {
 	test := KiB(1)
 	if test.Prefix != "KiB" {

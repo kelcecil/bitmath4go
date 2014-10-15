@@ -1,7 +1,7 @@
 package bitmath4go
 
-func (b Byte) AsKilibytes() Byte {
-	return Byte{
+func (b BitmathBase) AsKilibytes() BitmathBase {
+	return BitmathBase{
 		ByteValue: b.ByteValue,
 		StatedValue: StatedValue{
 			Prefix:    "KiB",
@@ -11,8 +11,8 @@ func (b Byte) AsKilibytes() Byte {
 	}
 }
 
-func (b Byte) AsMebibytes() Byte {
-	return Byte{
+func (b BitmathBase) AsMebibytes() BitmathBase {
+	return BitmathBase{
 		ByteValue: b.ByteValue,
 		StatedValue: StatedValue{
 			Prefix:    "MiB",
@@ -22,8 +22,8 @@ func (b Byte) AsMebibytes() Byte {
 	}
 }
 
-func (b Byte) AsGibibytes() Byte {
-	return Byte{
+func (b BitmathBase) AsGibibytes() BitmathBase {
+	return BitmathBase{
 		ByteValue: b.ByteValue,
 		StatedValue: StatedValue{
 			Prefix:    "GiB",
@@ -33,8 +33,8 @@ func (b Byte) AsGibibytes() Byte {
 	}
 }
 
-func (b Byte) AsTebibytes() Byte {
-	return Byte{
+func (b BitmathBase) AsTebibytes() BitmathBase {
+	return BitmathBase{
 		ByteValue: b.ByteValue,
 		StatedValue: StatedValue{
 			Prefix:    "TiB",
@@ -44,8 +44,8 @@ func (b Byte) AsTebibytes() Byte {
 	}
 }
 
-func (b Byte) AsPebibytes() Byte {
-	return Byte{
+func (b BitmathBase) AsPebibytes() BitmathBase {
+	return BitmathBase{
 		ByteValue: b.ByteValue,
 		StatedValue: StatedValue{
 			Prefix:    "PiB",
@@ -55,8 +55,8 @@ func (b Byte) AsPebibytes() Byte {
 	}
 }
 
-func (b Byte) AsExbibytes() Byte {
-	return Byte{
+func (b BitmathBase) AsExbibytes() BitmathBase {
+	return BitmathBase{
 		ByteValue: b.ByteValue,
 		StatedValue: StatedValue{
 			Prefix:    "EiB",

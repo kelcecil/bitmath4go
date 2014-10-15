@@ -2,13 +2,13 @@ package bitmath4go
 
 import "testing"
 
-func testShortAndLongFuncNamesShouldBeSame(t *testing.T, shortName Byte, longName Byte) {
+func testShortAndLongFuncNamesShouldBeSame(t *testing.T, shortName BitmathBase, longName BitmathBase) {
 	if shortName != longName {
 		t.Errorf("%s short and long func names do not produce the same thing.", shortName.Prefix)
 	}
 }
 
-func testInitializationValues(t *testing.T, testObject Byte, expectedValue float64) {
+func testInitializationValues(t *testing.T, testObject BitmathBase, expectedValue float64) {
 	if testObject.ByteValue != expectedValue {
 		reportIncorrectValue(t, testObject.Prefix, testObject.ByteValue, expectedValue)
 	}
