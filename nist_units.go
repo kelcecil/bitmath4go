@@ -36,16 +36,10 @@ func generateSizeFunction(prefix string, baseValue float64) func(float64) Byte {
 }
 
 var (
-	Kilibyte = generateSizeFunction("KiB", byteValues["KiB"])
-	KiB      = Kilibyte
-	Mebibyte = generateSizeFunction("MiB", byteValues["MiB"])
-	MiB      = Mebibyte
-	Gibibyte = generateSizeFunction("GiB", byteValues["GiB"])
-	GiB      = Gibibyte
-	Tebibyte = generateSizeFunction("TiB", byteValues["TiB"])
-	TiB      = Tebibyte
-	Pebibyte = generateSizeFunction("PiB", byteValues["PiB"])
-	PiB      = Pebibyte
-	Exbibyte = generateSizeFunction("EiB", byteValues["EiB"])
-	EiB      = Exbibyte
+	KiB = generateSizeFunction("KiB", byteValues["KiB"])
+	MiB = generateSizeFunction("MiB", byteValues["MiB"])
+	GiB = generateSizeFunction("GiB", byteValues["GiB"])
+	TiB = generateSizeFunction("TiB", byteValues["TiB"])
+	PiB = generateSizeFunction("PiB", byteValues["PiB"])
+	EiB = generateSizeFunction("EiB", byteValues["EiB"])
 )
